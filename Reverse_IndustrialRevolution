@@ -1,0 +1,41 @@
+function OnEvent(event, arg)
+	if (event == "MOUSE_BUTTON_RELEASED" and arg == 9) then
+
+		if (not IsKeyLockOn("capslock")) then
+			PressKey("capslock")
+			Sleep(5)
+			ReleaseKey("capslock")
+
+		end
+--entermap1()
+--arrival()
+--fragment3()
+rev_fragment()
+	end
+if (event == "MOUSE_BUTTON_RELEASED" and arg == 6) then
+
+		if (not IsKeyLockOn("capslock")) then
+			PressKey("capslock")
+			Sleep(5)
+			ReleaseKey("capslock")
+
+		end
+--fullauto()
+--strike()
+fishing()
+
+	end
+if (event == "MOUSE_BUTTON_PRESSED" and arg == 7) then
+PressMouseButton(1)
+PressKey("escape")
+PressKey("Q")
+ReleaseMouseButton(1)
+ReleaseKey("escape")
+Sleep(200)
+PressKey("escape")
+ReleaseKey("escape")
+	end
+if (event == "MOUSE_BUTTON_RELEASED" and arg == 7) then
+ReleaseKey("Q")
+	end
+end
