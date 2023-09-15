@@ -1,41 +1,61 @@
 function OnEvent(event, arg)
 	if (event == "MOUSE_BUTTON_RELEASED" and arg == 9) then
-
 		if (not IsKeyLockOn("capslock")) then
 			PressKey("capslock")
 			Sleep(5)
 			ReleaseKey("capslock")
-
 		end
---entermap1()
---arrival()
---fragment3()
 rev_fragment()
 	end
-if (event == "MOUSE_BUTTON_RELEASED" and arg == 6) then
+end
 
-		if (not IsKeyLockOn("capslock")) then
-			PressKey("capslock")
-			Sleep(5)
-			ReleaseKey("capslock")
-
-		end
---fullauto()
---strike()
-fishing()
-
-	end
-if (event == "MOUSE_BUTTON_PRESSED" and arg == 7) then
-PressMouseButton(1)
-PressKey("escape")
-PressKey("Q")
-ReleaseMouseButton(1)
-ReleaseKey("escape")
+function rev_fragment()
+while (IsKeyLockOn("capslock")) do
+x,y=GetMousePosition()
+for i=1,2,1 do
+PressAndReleaseKey("a")
+Sleep(500)
+end
+for i=0,10,1 do
+MoveMouseRelative(5,0)
+Sleep(2)
+end
+Sleep(500)
+for i=1,2,1 do
+PressAndReleaseMouseButton(1)
 Sleep(200)
-PressKey("escape")
-ReleaseKey("escape")
-	end
-if (event == "MOUSE_BUTTON_RELEASED" and arg == 7) then
-ReleaseKey("Q")
-	end
+end
+Sleep(200)
+for i=0,20,1 do
+MoveMouseRelative(5,-2)
+Sleep(2)
+end
+Sleep(500)
+for i=1,9,1 do
+PressMouseButton(1)
+Sleep(3500)
+ReleaseMouseButton(1)
+Sleep(300)
+end
+Sleep(500)
+PressAndReleaseKey("escape")
+Sleep(500)
+for i=1,2,1 do
+PressAndReleaseKey("d")
+Sleep(500)
+end
+for i=0,20,1 do
+MoveMouseRelative(-5,2)
+Sleep(2)
+end
+Sleep(500)
+MoveMouseTo(x,y)
+Sleep(500)
+for i=1,9,1 do
+PressKey("f")
+Sleep(1500)
+ReleaseKey("f")
+Sleep(300)
+end
+end
 end
